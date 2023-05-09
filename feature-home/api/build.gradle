@@ -45,7 +45,7 @@ publishing {
     publications {
         release(MavenPublication) {
             groupId = 'com.github.dragladebeat'
-            artifactId = 'simple-home'
+            artifactId = 'simple-home-api'
             version = '0.0.1'
 
             afterEvaluate {
