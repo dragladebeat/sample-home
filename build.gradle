@@ -4,3 +4,19 @@ plugins {
     id 'com.android.library' version '8.0.1' apply false
     id 'org.jetbrains.kotlin.android' version '1.8.20' apply false
 }
+
+//subprojects {
+//    publishing {
+//        publications {
+//            release(MavenPublication) {
+//                groupId project.group
+//                artifactId project.name
+//                version project.version
+//
+//                afterEvaluate {
+//                    from components.release
+//                }
+//            }
+//        }
+//    }
+//}

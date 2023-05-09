@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "sample-home"
-include ':feature-home:api'
-include ':feature-home:ui'
+include ':api'
+include ':ui'
