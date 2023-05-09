@@ -4,10 +4,6 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 
 @Composable
-fun HomeScreen() {
-    Text("Home")
-}
-
-object FeatureHomeFunc {
-    const val something = ""
+fun HomeScreen(dummyFunc: String) {
+    Text(dummyFunc)
 }

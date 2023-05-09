@@ -1,19 +1,23 @@
 plugins {
-    id 'com.android.library'
+    id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
-    id 'maven-publish'
 }
 
 android {
-    namespace 'com.derpcreation.home.ui'
+    namespace 'com.derpcreation.samplehome'
     compileSdk 33
 
     defaultConfig {
+        applicationId "com.derpcreation.samplehome"
         minSdk 24
         targetSdk 33
+        versionCode 1
+        versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles "consumer-rules.pro"
+        vectorDrawables {
+            useSupportLibrary true
+        }
     }
 
     buildTypes {
@@ -29,13 +33,16 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-
     buildFeatures {
         compose true
     }
-
     composeOptions {
         kotlinCompilerExtensionVersion '1.3.2'
+    }
+    packagingOptions {
+        resources {
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'
+        }
     }
 }
 
@@ -56,18 +63,7 @@ dependencies {
     androidTestImplementation 'androidx.compose.ui:ui-test-junit4'
     debugImplementation 'androidx.compose.ui:ui-tooling'
     debugImplementation 'androidx.compose.ui:ui-test-manifest'
-}
 
-publishing {
-    publications {
-        release(MavenPublication) {
-            groupId project.group
-            artifactId project.name
-            version project.version
-
-            afterEvaluate {
-                from components.release
-            }
-        }
-    }
+    implementation(project(":api"))
+    implementation(project(":ui"))
 }
